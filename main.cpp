@@ -1,23 +1,7 @@
 #include <iostream>
+#include "Count.h"
 using namespace std;
 
-class Counter
-{
-private:
-	static int count; //static member
-
-public:
-	//default constructor 
-	Counter()
-	{
-		count++;
-	}
-	//static member function
-	static void Print()
-	{
-		cout << "Total objects are: " << count << endl;
-	}
-};
 
 //count initialization with 0
 int Counter::count = 0;
@@ -32,6 +16,13 @@ int main()
 
 	Counter obj3;
 	obj3.Print();
+
+	Counter obj4;
+	obj4 = obj2;
+	obj4.Print();
+
+	Counter obj5(obj2);
+	obj5.Print();
 
 	system("pause");
 }
